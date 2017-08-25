@@ -10,10 +10,10 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link href="/tetrimino/css/materialize.min.css" type="text/css" rel="stylesheet"
-	media="screen,projection" />
-<link href="/tetrimino/css/tetrimino.css" type="text/css" rel="stylesheet"
-	media="screen,projection" />
+<link href="/tetrimino/css/materialize.min.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
+<link href="/tetrimino/css/tetrimino.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -22,7 +22,7 @@
 
 <body>
 	<c:import url="/inc/menu.jsp" />
-	
+
 	<c:set var="placeholderNom">
 		<c:choose>
 			<c:when test="${ empty erreurs['nom'] }">Nom</c:when>
@@ -38,46 +38,39 @@
 
 	<div class="container">
 		<form method="POST" class="row center">
-			<input type="text" name="id" class="row center" value="${ tetri.id }" hidden />
+			<input type="text" name="id" class="row center" value="${ tetri.id }"
+				hidden />
 			<h5>Nom Tetrimino</h5>
-			<input type="text" name="nom" class="row center" value="${ tetri.nom }" placeholder="<c:out value="${ placeholderNom }" />" />
+			<input type="text" name="nom" class="row center"
+				value="${ tetri.nom }"
+				placeholder="<c:out value="${ placeholderNom }" />" />
 			<h5>Couleur</h5>
-			<input type="text" name="couleur" class="row center" value="${ tetri.couleur }" placeholder="<c:out value="${ placeholderCouleur }" />" />
+			<input type="text" name="couleur" class="row center"
+				value="${ tetri.couleur }"
+				placeholder="<c:out value="${ placeholderCouleur }" />" />
 
-			<button class="btn waves-effect waves-light red lighten-1" type="submit" name="action">
+			<button class="btn waves-effect waves-light red lighten-1"
+				type="submit" name="action">
 				Modifier <i class="material-icons right">send</i>
 			</button>
-			
+
 		</form>
-		
-		<a class="waves-effect waves-light btn red lighten-1" href="ajoutFigure?id=${tetri.id}">Nouvelle figure</a>
-		
-		
-		<div class="figure">
-			<c:forEach begin="0" end="3" var="x">
-				<c:forEach begin="0" end="3" var="y">
-					<div class="bloc">
-						<a href="#?x=${ x }&y=${ y }">&nbsp;</a>
-					</div>
+
+		<a class="waves-effect waves-light btn red lighten-1"
+			href="ajoutFigure?id=${tetri.id}">Nouvelle figure</a>
+
+		<c:forEach items="${tetri.figures}" var="item">
+			<div class="figure">
+				<c:forEach begin="0" end="3" var="x">
+					<c:forEach begin="0" end="3" var="y">
+						<div class="bloc">
+							<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
+						</div>
+					</c:forEach>
 				</c:forEach>
-			</c:forEach>
-		</div>
-		
-		
-		
-		<c:forEach items="${tetri.figures}" var="item">f</c:forEach>
-					<c:forEach items="${tetriminos}" var="item">
-			    <li class="collection-item avatar">
-			     	<c:choose>
-				     	<c:when test="${ item.nom eq 'J' || item.nom eq 'Z' || item.nom eq 'T' || item.nom eq 'L' || item.nom eq 'S' || item.nom eq 'carre' || item.nom eq 'ligne' }"><img src="img/<c:out value="${ item.nom }" />.png" alt="" class="circle"></c:when>
-				     	<c:otherwise><img src="img/tetris.jpg" alt="" class="circle"></c:otherwise>
-			     	</c:choose>
-					<c:out value="${item.id}" /> | <c:out value="${item.nom}" /> | <c:out value="${item.couleur}" />
-					<a href="admin/supprimerPiece?id=<c:out value="${ item.id }"/>" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i></a>
-					<a href="admin/modifPiece?id=<c:out value="${ item.id }"/>" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
-				</li>
-			</c:forEach>
-		
+			</div>
+		</c:forEach>
+
 	</div>
 
 	<script type="text/javascript"

@@ -38,7 +38,7 @@ public class AddFigureServlet extends SpringServlet{
 	
 	myFigure.setOrdre(0);
 	
-	myFigure.setTerimino(myTetrimino);
+	myFigure.setTetrimino(myTetrimino);
 	
 	figureHibernateDAO.save(myFigure);
 	

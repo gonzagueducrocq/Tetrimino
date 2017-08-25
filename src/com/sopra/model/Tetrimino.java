@@ -37,7 +37,7 @@ public class Tetrimino implements Serializable
 	@Size(max=30)
 	private String couleur;
 	
-	@OneToMany(mappedBy="terimino")
+	@OneToMany(mappedBy="tetrimino")
 	private List<Figure> figures;
 	
 	

@@ -28,19 +28,26 @@ public class Figure {
 	
 	@ManyToOne
 	@JoinColumn(name="FIG_TETRIMINO_ID")
-	private Tetrimino terimino;
+	private Tetrimino tetrimino;
 	
 	@OneToMany(mappedBy="figure")
 	private List<Bloc> blocs;
 	
-	
-
-	public Tetrimino getTerimino() {
-		return terimino;
+	public boolean blocExistant (int x, int y) {
+		
+		for (Bloc bloc : blocs) {
+			if (bloc.getX() == x && bloc.getY() == y)
+			return true;
+		}
+		return false;
 	}
 
-	public void setTerimino(Tetrimino terimino) {
-		this.terimino = terimino;
+	public Tetrimino getTetrimino() {
+		return tetrimino;
+	}
+
+	public void setTetrimino(Tetrimino tetrimino) {
+		this.tetrimino = tetrimino;
 	}
 
 	public int getId() {
