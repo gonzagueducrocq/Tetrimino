@@ -7,18 +7,20 @@ import java.util.Map;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sopra.dao.IAdminDAO;
 import com.sopra.dao.IPersonneDAO;
 import com.sopra.exception.FormValidationException;
 import com.sopra.model.Admin;
 import com.sopra.model.Personne;
+import com.sopra.servlet.action.SpringServlet;
 
 @WebServlet("/accueil")
-public class HomeServlet extends HttpServlet {
+public class HomeServlet extends SpringServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VUE_GET		= "/WEB-INF/accueil.jsp";
 	private static final String VUE_ADMIN	= "admin/accueilAdmin";
@@ -29,10 +31,10 @@ public class HomeServlet extends HttpServlet {
 	
 	private Map<String, String> erreurs		= new HashMap<String, String>();
 	
-	@EJB(name="personneHibernateDAO")
+	@Autowired
 	private IPersonneDAO personneHibernateDAO;
 	
-	@EJB(name="adminHibernateDAO")
+	@Autowired
 	private IAdminDAO adminHibernateDAO;
 	
 //	@EJB(name="joueurHibernateDAO")
