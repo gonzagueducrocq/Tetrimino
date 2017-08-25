@@ -11,13 +11,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.server.TetriminoServerDAO;
 import com.sopra.exception.FormValidationException;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/admin/ajoutTetrimino")
-public class AddTetriminoServlet extends HttpServlet {
+public class AddTetriminoServlet extends SpringServlet {
 	private static final String VUE_GET					= "/WEB-INF/admin/ajouterTetrimino.jsp";
 	private static final String VUE_POST				= "/tetrimino/listeTetriminos";
 	
@@ -27,7 +29,7 @@ public class AddTetriminoServlet extends HttpServlet {
 	
 	private Map<String, String> erreurs	= new HashMap<String, String>();
 	
-	@EJB(name="tetriminoHibernateDAO")
+	@Autowired
 	private ITetriminoDAO tetriminoHibernateDAO;
 
 	@Override
