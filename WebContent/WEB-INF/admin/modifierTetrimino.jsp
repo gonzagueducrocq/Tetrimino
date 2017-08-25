@@ -65,7 +65,7 @@
 					<c:forEach begin="0" end="3" var="y">
 						<c:set var="color" value="red" />
 						
-						<c:if test="">
+						<c:if test="${ item.blocExistant(x,y) }">
 							<c:set var="color" value="blue" />
 						</c:if>
 						

@@ -21,23 +21,23 @@ public class Figure {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column (name="FIG_ID")
 	private int id;
-	
+
 	@Column (name="FIG_ORD")
 	@NotNull
 	private int ordre;
-	
+
 	@ManyToOne
 	@JoinColumn(name="FIG_TETRIMINO_ID")
 	private Tetrimino tetrimino;
-	
+
 	@OneToMany(mappedBy="figure")
 	private List<Bloc> blocs;
-	
+
 	public boolean blocExistant (int x, int y) {
 		
 		for (Bloc bloc : blocs) {
 			if (bloc.getX() == x && bloc.getY() == y)
-			return true;
+				return true;
 		}
 		return false;
 	}
@@ -65,11 +65,11 @@ public class Figure {
 	public void setOrdre(int ordre) {
 		this.ordre = ordre;
 	}
-	
+
 	public List<Bloc> getBlocs() {
 		return blocs;
 	}
-	
+
 	public void setBlocs(List<Bloc> blocs) {
 		this.blocs = blocs;
 	}
