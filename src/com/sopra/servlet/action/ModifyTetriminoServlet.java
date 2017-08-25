@@ -11,14 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.dao.server.TetriminoServerDAO;
 import com.sopra.exception.FormValidationException;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/admin/modifPiece")
-public class ModifyTetriminoServlet extends HttpServlet {
-	@EJB(name="tetriminoHibernateDAO")
+public class ModifyTetriminoServlet extends SpringServlet {
+	@Autowired
 	private ITetriminoDAO tetriminoHibernateDAO;
 	
 	public static final String VUE_GET			= "/WEB-INF/admin/modifierTetrimino.jsp";

@@ -9,15 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.ITetriminoDAO;
 import com.sopra.model.Tetrimino;
 
 @WebServlet("/admin/supprimerPiece")
-public class DeleteTetriminoServlet extends HttpServlet {
+public class DeleteTetriminoServlet extends SpringServlet {
 	private static final String ATT_ID				= "id";
 	private static final String VUE_POST			= "/tetrimino/listeTetriminos";
 	
-	@EJB(name="tetriminoHibernateDAO")
+	@Autowired
 	private ITetriminoDAO tetriminoHibernateDAO;
 
 	@Override

@@ -11,14 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IJoueurDAO;
 import com.sopra.exception.FormValidationException;
 import com.sopra.model.Joueur;
 
 @WebServlet("/signin")
-public class SignInServlet extends HttpServlet {
+public class SignInServlet extends SpringServlet {
 	
-	@EJB(name="joueurHibernateDAO")
+	@Autowired
 	private IJoueurDAO joueurHibernateDAO;
 	
 	private static final String VUE_SIGNIN		= "/WEB-INF/signin.jsp";

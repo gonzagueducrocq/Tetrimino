@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IAdminDAO;
 import com.sopra.dao.IJoueurDAO;
 import com.sopra.dao.IPartieDAO;
@@ -22,25 +24,25 @@ import com.sopra.model.Tetrimino;
 
 
 @WebServlet("/gen")
-public class GenerateServlet extends HttpServlet {
+public class GenerateServlet extends SpringServlet {
 
-	@EJB(name="adminHibernateDAO")
+	@Autowired
 	private IAdminDAO adminHibernateDAO;
 	
 	
-	@EJB(name="joueurHibernateDAO")
+	@Autowired
 	private IJoueurDAO joueurHibernateDAO;
 	
-	@EJB(name="tetriminoHibernateDAO")
+	@Autowired
 	private ITetriminoDAO tetriminoHibernateDAO;
 	
-	@EJB(name="partieHibernateDAO")
+	@Autowired
 	private IPartieDAO partieHibernateDAO;
 	
-	@EJB(name="scoreHibernateDAO")
+	@Autowired
 	private IScoreDAO scoreHibernateDAO;
 	
-	@Override
+	@Autowired
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		/*Admin admin = new Admin();

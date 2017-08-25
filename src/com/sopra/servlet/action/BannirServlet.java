@@ -9,15 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.sopra.dao.IJoueurDAO;
 import com.sopra.model.Joueur;
 
 @WebServlet("/admin/bannir")
-public class BannirServlet extends HttpServlet {
+public class BannirServlet extends SpringServlet {
 	
 	private static final String VUE_LISTE_JOUEUR	= "/tetrimino/listeJoueurs";
 
-	@EJB(name="joueurHibernateDAO")
+	@Autowired
 	private IJoueurDAO joueurHibernateDAO;
 	
 	@Override

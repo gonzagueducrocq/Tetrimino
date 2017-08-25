@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/deconnexion")
-public class DeconnexionServlet extends HttpServlet {
+public class DeconnexionServlet extends SpringServlet {
 	private static final String VUE_DECONNEXION	= "accueil";
 	
 	@Override
