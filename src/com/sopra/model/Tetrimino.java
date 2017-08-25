@@ -1,12 +1,14 @@
 package com.sopra.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -35,7 +37,18 @@ public class Tetrimino implements Serializable
 	@Size(max=30)
 	private String couleur;
 	
+	@OneToMany(mappedBy="terimino")
+	private List<Figure> figures;
 	
+	
+	public List<Figure> getFigures() {
+		return figures;
+	}
+
+	public void setFigures(List<Figure> figures) {
+		this.figures = figures;
+	}
+
 	public int getId() {
 		return id;
 	}
