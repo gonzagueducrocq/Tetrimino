@@ -45,7 +45,12 @@
 			<button class="btn waves-effect waves-light red lighten-1" type="submit" name="action">
 				Modifier <i class="material-icons right">send</i>
 			</button>
+			
 		</form>
+		
+		<a class="waves-effect waves-light btn" href="ajoutFigure?id=${tetri.id}">Nouvelle figure</a>
+		
+		
 	</div>
 
 	<script type="text/javascript"
