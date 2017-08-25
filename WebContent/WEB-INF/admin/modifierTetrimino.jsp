@@ -12,6 +12,8 @@
 	rel="stylesheet">
 <link href="/tetrimino/css/materialize.min.css" type="text/css" rel="stylesheet"
 	media="screen,projection" />
+<link href="/tetrimino/css/tetrimino.css" type="text/css" rel="stylesheet"
+	media="screen,projection" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -49,6 +51,18 @@
 		</form>
 		
 		<a class="waves-effect waves-light btn red lighten-1" href="ajoutFigure?id=${tetri.id}">Nouvelle figure</a>
+		
+		
+		<div class="figure">
+			<c:forEach begin="0" end="3" var="x">
+				<c:forEach begin="0" end="3" var="y">
+					<div class="bloc">
+						<a href="#?x=${ x }&y=${ y }">&nbsp;</a>
+					</div>
+				</c:forEach>
+			</c:forEach>
+		</div>
+		
 		
 		
 		<c:forEach items="${tetri.figures}" var="item">f</c:forEach>
