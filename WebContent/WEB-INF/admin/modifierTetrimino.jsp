@@ -63,7 +63,13 @@
 			<div class="figure">
 				<c:forEach begin="0" end="3" var="x">
 					<c:forEach begin="0" end="3" var="y">
-						<div class="bloc">
+						<c:set var="color" value="red" />
+						
+						<c:if test="">
+							<c:set var="color" value="blue" />
+						</c:if>
+						
+						<div class="bloc" style="background: ${ color };">
 							<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
 						</div>
 					</c:forEach>
