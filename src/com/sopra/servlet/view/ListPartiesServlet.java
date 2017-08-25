@@ -6,24 +6,25 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sopra.dao.IPartieDAO;
 import com.sopra.dao.IScoreDAO;
 import com.sopra.model.Partie;
-import com.sopra.model.Score;
+import com.sopra.servlet.action.SpringServlet;
 
 @WebServlet("/admin/listeParties")
-public class ListPartiesServlet extends HttpServlet {
+public class ListPartiesServlet extends SpringServlet {
 	
 	private static final String VUE_LISTE	= "/WEB-INF/admin/listerParties.jsp";
 	
-	@EJB(name="partieHibernateDAO")
+	@Autowired
 	private IPartieDAO partieHibernateDAO;
 	
-	@EJB(name="scoreHibernateDAO")
+	@Autowired
 	private IScoreDAO scoreHibernateDAO;
 
 	@Override

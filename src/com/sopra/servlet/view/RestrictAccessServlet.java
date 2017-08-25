@@ -8,8 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sopra.servlet.action.SpringServlet;
+
 @WebServlet("/accesNonAutorise")
-public class RestrictAccessServlet extends HttpServlet {
+public class RestrictAccessServlet extends SpringServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

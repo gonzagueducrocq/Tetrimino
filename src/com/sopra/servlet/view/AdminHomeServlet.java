@@ -4,12 +4,13 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sopra.servlet.action.SpringServlet;
+
 @WebServlet("/admin/accueilAdmin")
-public class AdminHomeServlet extends HttpServlet {
+public class AdminHomeServlet extends SpringServlet {
 	public static final String VUE_GET		= "/WEB-INF/admin/accueilAdmin.jsp";
 
 	@Override
