@@ -36,3 +36,14 @@ div.remove {
 div.remove i {
 	color: red;
 }
+
+
+div.remove:hover {
+	background: red;
+	border-radius: 50%;
+}
+
+
+div.remove:hover i {
+	color: white;
+}
