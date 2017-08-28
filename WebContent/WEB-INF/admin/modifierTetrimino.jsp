@@ -63,7 +63,7 @@
 			<div class="figure">
 				<c:forEach begin="0" end="3" var="x">
 					<c:forEach begin="0" end="3" var="y">
-						<c:set var="color" value="red" />
+						<c:set var="color" value="white" />
 						<c:set var="bloc" value="${item.blocExistant(x,y)}"/>
 
 						<c:if test="${ bloc != null }">
