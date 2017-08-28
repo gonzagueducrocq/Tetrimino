@@ -13,12 +13,14 @@
 	rel="stylesheet">
 <link href="css/materialize.min.css" type="text/css" rel="stylesheet"
 	media="screen,projection" />
+<link href="/tetrimino/css/figure.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <style>
 .posRelative {
-	position : relative !important;
+	position: relative !important;
 }
 </style>
 
@@ -34,19 +36,44 @@
 	<div class="container">
 		<div class="collection">
 			<c:forEach items="${tetriminos}" var="item">
-			    <li class="collection-item avatar">
-			     	<c:choose>
-				     	<c:when test="${ item.nom eq 'J' || item.nom eq 'Z' || item.nom eq 'T' || item.nom eq 'L' || item.nom eq 'S' || item.nom eq 'carre' || item.nom eq 'ligne' }"><img src="img/<c:out value="${ item.nom }" />.png" alt="" class="circle"></c:when>
-				     	<c:otherwise><img src="img/tetris.jpg" alt="" class="circle"></c:otherwise>
-			     	</c:choose>
-					<c:out value="${item.id}" /> | <c:out value="${item.nom}" /> | <c:out value="${item.couleur}" />
-					<a href="admin/supprimerPiece?id=<c:out value="${ item.id }"/>" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i></a>
-					<a href="admin/modifPiece?id=<c:out value="${ item.id }"/>" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
+				<li class="collection-item avatar">
+				
+				<c:if test="${item.figures.size() > 0 }">
+					<c:set var="figure" value="${item.figures.get(0)}"></c:set>
+					<div class="figure">
+						<div class="blocs">
+							<c:forEach begin="0" end="3" var="x">
+								<c:forEach begin="0" end="3" var="y">
+									<c:set var="color" value="white" />
+									<c:set var="bloc" value="${figure.blocExistant(x,y)}" />
+
+									<c:if test="${ bloc != null }">
+										<c:set var="color" value="${ item.couleur }" />
+										<div class="bloc" style="background: ${ color };">
+										</div>
+									</c:if>
+
+									<c:if test="${ bloc == null }">
+										<div class="bloc" style="background: ${ color };">
+										</div>
+									</c:if>
+								</c:forEach>
+							</c:forEach>
+						</div>
+
+					</div>
+					</c:if>
+					 <c:out value="${item.id}" /> | <c:out value="${item.nom}" /> | <c:out value="${item.couleur}" /> 
+					<a href="admin/supprimerPiece?id=${ item.id }" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i> </a>
+					<a href="admin/modifPiece?id=${ item.id }" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
+					
 				</li>
 			</c:forEach>
 		</div>
 		<p>
-			<a class="waves-effect waves-light btn-large red lighten-1" href="admin/ajoutTetrimino"><i class="material-icons left">add</i>Ajouter Tetrimino</a>
+			<a class="waves-effect waves-light btn-large red lighten-1"
+				href="admin/ajoutTetrimino"><i class="material-icons left">add</i>Ajouter
+				Tetrimino</a>
 		</p>
 	</div>
 </body>
