@@ -83,9 +83,21 @@
 					</c:forEach>
 				</div>
 				
-				<div class="remove">
+				<div class="icon remove">
 					<a href="supprimerFigure?id=${ item.id }">
 						<i class="material-icons">clear</i>
+					</a>
+				</div>
+				
+				<div class="icon moins">
+					<a href="ordonnerFigure?id=${ item.id }">
+						<i class="material-icons">arrow_upward</i>
+					</a>
+				</div>
+				
+				<div class="icon plus">
+					<a href="ordonnerFigure?id=${ item.id }">
+						<i class="material-icons">arrow_downward</i>
 					</a>
 				</div>
 			</div>
