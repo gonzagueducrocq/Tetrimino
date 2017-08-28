@@ -61,26 +61,33 @@
 
 		<c:forEach items="${tetri.figures}" var="item">
 			<div class="figure">
-				<c:forEach begin="0" end="3" var="x">
-					<c:forEach begin="0" end="3" var="y">
-						<c:set var="color" value="white" />
-						<c:set var="bloc" value="${item.blocExistant(x,y)}"/>
-
-						<c:if test="${ bloc != null }">
-							<c:set var="color" value="${ tetri.couleur }" />
-							<div class="bloc" style="background: ${ color };">
-								<a href="suppressionBloc?id=${bloc.id}&x=${ x }&y=${ y }">&nbsp;</a>
-							</div>
-						</c:if>
-
-						<c:if test="${ bloc == null }">
-							<div class="bloc" style="background: ${ color };">
-								<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
-							</div>
-						</c:if>
-							
+				<div class="blocs">
+					<c:forEach begin="0" end="3" var="x">
+						<c:forEach begin="0" end="3" var="y">
+							<c:set var="color" value="white" />
+							<c:set var="bloc" value="${item.blocExistant(x,y)}"/>
+	
+							<c:if test="${ bloc != null }">
+								<c:set var="color" value="${ tetri.couleur }" />
+								<div class="bloc" style="background: ${ color };">
+									<a href="suppressionBloc?id=${bloc.id}&x=${ x }&y=${ y }">&nbsp;</a>
+								</div>
+							</c:if>
+	
+							<c:if test="${ bloc == null }">
+								<div class="bloc" style="background: ${ color };">
+									<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
+								</div>
+							</c:if>
+						</c:forEach>
 					</c:forEach>
-				</c:forEach>
+				</div>
+				
+				<div class="remove">
+					<a href="#">
+						<i class="material-icons">clear</i>
+					</a>
+				</div>
 			</div>
 		</c:forEach>
 
