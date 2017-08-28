@@ -44,7 +44,7 @@ public class FigureHibernateDAO implements IFigureDAO {
 
 	@Override
 	public void delete(Figure figure) {
-		em.remove(em.merge(figure));
+		em.remove(em.contains(figure) ? figure : em.merge(figure));
 
 	}
 
