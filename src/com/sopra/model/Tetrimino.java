@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -38,6 +39,7 @@ public class Tetrimino implements Serializable
 	private String couleur;
 	
 	@OneToMany(mappedBy="tetrimino")
+	@OrderBy("ordre")
 	private List<Figure> figures;
 	
 	

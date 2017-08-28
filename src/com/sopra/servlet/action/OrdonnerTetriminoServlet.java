@@ -14,7 +14,7 @@ import com.sopra.dao.ITetriminoDAO;
 import com.sopra.model.Figure;
 import com.sopra.model.Tetrimino;
 
-@WebServlet("ordonnerFigure")
+@WebServlet("/admin/ordonnerFigure")
 public class OrdonnerTetriminoServlet extends SpringServlet{
 
 	private static final String VUE_GET					= "/tetrimino/admin/modifPiece";
@@ -45,15 +45,16 @@ public class OrdonnerTetriminoServlet extends SpringServlet{
 				figureHibernateDAO.save(figure);
 			}
 
-			myFigure.setOrdre(nelOrdre);
-			figureHibernateDAO.save(myFigure);
-
-
 		}
-
+		myFigure.setOrdre(nelOrdre);
+		figureHibernateDAO.save(myFigure);
+	
+		resp.sendRedirect(VUE_GET+"?id="+myTetrimino.getId());
+		
 	}
 
 
+	
 }
 
 

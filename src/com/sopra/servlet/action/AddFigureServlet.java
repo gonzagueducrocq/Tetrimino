@@ -36,7 +36,7 @@ public class AddFigureServlet extends SpringServlet{
 	
 	Figure myFigure = new Figure();
 	
-	myFigure.setOrdre(0);
+	myFigure.setOrdre(myTetrimino.getFigures().size());
 	
 	myFigure.setTetrimino(myTetrimino);
 	
