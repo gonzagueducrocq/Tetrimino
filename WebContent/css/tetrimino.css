@@ -31,16 +31,18 @@ div.bloc a {
 
 div.remove {
 	float: right;
+	transition: all ease 0.5s;
+	border-radius: 50%;
 }
 
 div.remove i {
+	transition: all ease 0.5s;
 	color: red;
 }
 
 
 div.remove:hover {
 	background: red;
-	border-radius: 50%;
 }
 
 
