@@ -24,7 +24,7 @@ public class ModifyTetriminoServlet extends SpringServlet {
 	private ITetriminoDAO tetriminoHibernateDAO;
 	
 	public static final String VUE_GET			= "/WEB-INF/admin/modifierTetrimino.jsp";
-	public static final String VUE_POST			= "/tetrimino/listeTetriminos";
+	public static final String VUE_POST			= "/tetrimino/admin/modifPiece";
 	
 	private static final String PARAM_ID		= "id";
 	
@@ -76,7 +76,7 @@ public class ModifyTetriminoServlet extends SpringServlet {
 		
 		if (erreurs.isEmpty()) {
 			tetriminoHibernateDAO.save(tetrimino);
-			resp.sendRedirect(VUE_POST);
+			resp.sendRedirect(VUE_POST+"?id="+id);
 		} else {
 			req.setAttribute(ATT_TETRI, tetrimino);
 			req.setAttribute(ATT_ERREUR, erreurs);

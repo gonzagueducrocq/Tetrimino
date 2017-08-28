@@ -41,8 +41,8 @@
 			<h5>Nom Tetrimino</h5>
 			<input type="text" name="nom" class="row center" placeholder="<c:out value="${ placeholderNom }" />" />
 			<h5>Couleur</h5>
-			<input type="text" name="couleur" class="row center" placeholder="<c:out value="${ placeholderCouleur }" />" />
-
+			<input type="color" name="couleur" class="row center" placeholder="<c:out value="${ placeholderCouleur }" />" />
+			<br>
 			<button class="btn waves-effect waves-light red lighten-1" type="submit" name="action">
 				Ajouter <i class="material-icons right">send</i>
 			</button>

@@ -45,13 +45,13 @@
 				value="${ tetri.nom }"
 				placeholder="<c:out value="${ placeholderNom }" />" />
 			<h5>Couleur</h5>
-			<input type="text" name="couleur" class="row center"
+			<input type="color" name="couleur" class="row center"
 				value="${ tetri.couleur }"
 				placeholder="<c:out value="${ placeholderCouleur }" />" />
-
+			<br>
 			<button class="btn waves-effect waves-light red lighten-1"
 				type="submit" name="action">
-				Modifier <i class="material-icons right">send</i>
+				Modifier <i class="material-icons right" >send</i>
 			</button>
 
 		</form>
