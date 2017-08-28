@@ -33,13 +33,13 @@ public class Figure {
 	@OneToMany(mappedBy="figure")
 	private List<Bloc> blocs;
 
-	public boolean blocExistant (int x, int y) {
+	public Bloc blocExistant (int x, int y) {
 		
 		for (Bloc bloc : blocs) {
 			if (bloc.getX() == x && bloc.getY() == y)
-				return true;
+				return bloc;
 		}
-		return false;
+		return null;
 	}
 
 	public Tetrimino getTetrimino() {
