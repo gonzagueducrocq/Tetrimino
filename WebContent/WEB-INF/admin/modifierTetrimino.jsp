@@ -84,7 +84,7 @@
 				</div>
 				
 				<div class="remove">
-					<a href="#">
+					<a href="supprimerFigure?id=${ item.id }">
 						<i class="material-icons">clear</i>
 					</a>
 				</div>
