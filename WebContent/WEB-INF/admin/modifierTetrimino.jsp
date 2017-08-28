@@ -75,7 +75,7 @@
 
 						<c:if test="${ bloc == null }">
 							<div class="bloc" style="background: ${ color };">
-								<a href="ajoutnBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
+								<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
 							</div>
 						</c:if>
 							
