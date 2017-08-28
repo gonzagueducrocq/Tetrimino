@@ -29,10 +29,33 @@ div.bloc a {
 }
 
 
-div.remove {
+
+div.bloc:hover {
+	opacity: 0.5;
+}
+
+
+
+div.icon {
 	float: right;
+	transition: all ease 0.5s;
+	border-radius: 50%;
 }
 
 div.remove i {
+	transition: all ease 0.5s;
 	color: red;
+}
+
+
+div.icon:hover {
+	background: #039BE5;
+}
+
+div.remove:hover {
+	background: red;
+}
+
+div.icon:hover i {
+	color: white;
 }
