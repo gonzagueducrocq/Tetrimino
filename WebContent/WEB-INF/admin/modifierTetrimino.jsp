@@ -90,13 +90,13 @@
 				</div>
 				
 				<div class="icon moins">
-					<a href="ordonnerFigure?id=${ item.id }">
+					<a href="ordonnerFigure?id=${ item.id }&sens=0">
 						<i class="material-icons">arrow_upward</i>
 					</a>
 				</div>
 				
 				<div class="icon plus">
-					<a href="ordonnerFigure?id=${ item.id }">
+					<a href="ordonnerFigure?id=${ item.id }&sens=1">
 						<i class="material-icons">arrow_downward</i>
 					</a>
 				</div>

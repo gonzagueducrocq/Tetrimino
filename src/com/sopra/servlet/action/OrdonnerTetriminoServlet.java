@@ -34,7 +34,15 @@ public class OrdonnerTetriminoServlet extends SpringServlet{
 
 		Tetrimino myTetrimino = myFigure.getTetrimino();
 
-		int nelOrdre =  myFigure.getOrdre() + 1;
+		int nelOrdre;
+		
+		if ( req.getParameter("sens").equals("0")) {
+			
+			nelOrdre = myFigure.getOrdre() - 1;
+			
+		}
+		
+		else nelOrdre = myFigure.getOrdre() + 1;
 
 		for (Figure figure : myTetrimino.getFigures()) {
 
