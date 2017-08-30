@@ -17,4 +17,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />
 	</definition>
 
+	<!-- Configuration de la vue "logIn" -->
+	<definition name="logIn" extends="base.definition">
+		<put-attribute name="title" value="Se connecter" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/logIn.jsp" />
+	</definition>
+
 </tiles-definitions>
