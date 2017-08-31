@@ -34,5 +34,17 @@
 		<put-attribute name="title" value="Liste des joueurs" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/afficherJoueurs.jsp" />
 	</definition>
+	
+			<!-- Configuration de la vue "tetriminos" -->
+	<definition name="tetriminos" extends="base.definition">
+		<put-attribute name="title" value="Liste des tetriminos" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/afficherTetriminos.jsp" />
+	</definition>
+	
+				<!-- Configuration de la vue "addTetrimino" -->
+	<definition name="addTetrimino" extends="base.definition">
+		<put-attribute name="title" value="Ajout tetri" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/ajouterTetrimino.jsp" />
+	</definition>
 
 </tiles-definitions>

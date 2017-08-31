@@ -6,10 +6,10 @@
 
 	<c:if test="true">
 		<ul class="right hide-on-med-and-down">
-			<li><a href="/tetrimino/listeTetriminos">Liste Tetriminos</a></li>
+			<li><a href="/tetrimino/tetriminos">Liste Tetriminos</a></li>
 		</ul>
 		<ul id="nav-mobile" class="side-nav">
-			<li><a href="/tetrimino/listeTetriminos">Liste Tetriminos</a></li>
+			<li><a href="/tetrimino/tetriminos">Liste Tetriminos</a></li>
 		</ul>
 		<ul class="right hide-on-med-and-down">
 			<li><a href="/tetrimino/joueurs">Liste Joueurs</a></li>
