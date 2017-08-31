@@ -28,5 +28,11 @@
 		<put-attribute name="title" value="Liste des parties" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/listerParties.jsp" />
 	</definition>
+	
+		<!-- Configuration de la vue "joueurs" -->
+	<definition name="joueurs" extends="base.definition">
+		<put-attribute name="title" value="Liste des joueurs" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/afficherJoueurs.jsp" />
+	</definition>
 
 </tiles-definitions>
