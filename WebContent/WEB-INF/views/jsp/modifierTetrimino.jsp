@@ -1,63 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link href="/tetrimino/css/materialize.min.css" type="text/css"
-	rel="stylesheet" media="screen,projection" />
-<link href="/tetrimino/css/tetrimino.css" type="text/css"
-	rel="stylesheet" media="screen,projection" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Modification de tetrimino</title>
-</head>
-
-<body>
-	<c:import url="/inc/menu.jsp" />
-
-	<c:set var="placeholderNom">
-		<c:choose>
-			<c:when test="${ empty erreurs['nom'] }">Nom</c:when>
-			<c:otherwise>${ erreurs['nom'] }</c:otherwise>
-		</c:choose>
-	</c:set>
-	<c:set var="placeholderCouleur">
-		<c:choose>
-			<c:when test="${ empty erreurs['couleur'] }">Couleur</c:when>
-			<c:otherwise>${ erreurs['couleur'] }</c:otherwise>
-		</c:choose>
-	</c:set>
-
-	<div class="container">
-		<form method="POST" class="row center">
+		<form:form method="POST" class="row center" modelAttribute="tetri">
 			<input type="text" name="id" class="row center" value="${ tetri.id }"
 				hidden />
 			<h5>Nom Tetrimino</h5>
-			<input type="text" name="nom" class="row center"
-				value="${ tetri.nom }"
-				placeholder="<c:out value="${ placeholderNom }" />" />
+			<form:input path="nom" class="row center"/>
 			<h5>Couleur</h5>
-			<input type="color" name="couleur" class="row center"
-				value="${ tetri.couleur }"
-				placeholder="<c:out value="${ placeholderCouleur }" />" />
+			<form:input path="couleur" class="row center"/>
 			<br>
 			<button class="btn waves-effect waves-light red lighten-1"
 				type="submit" name="action">
 				Modifier <i class="material-icons right" >send</i>
 			</button>
 
-		</form>
+		</form:form>
 
 		<a class="waves-effect waves-light btn red lighten-1"
-			href="ajoutFigure?id=${tetri.id}">Nouvelle figure</a>
+			href="/tetrimino/tetrimino/addFigure?id=${tetri.id}">Nouvelle figure</a>
 
 		<c:forEach items="${tetri.figures}" var="item">
 			<div class="figure">
@@ -70,13 +30,13 @@
 							<c:if test="${ bloc != null }">
 								<c:set var="color" value="${ tetri.couleur }" />
 								<div class="bloc" style="background: ${ color };">
-									<a href="suppressionBloc?id=${bloc.id}&x=${ x }&y=${ y }">&nbsp;</a>
+									<a href="/tetrimino/tetrimino/deleteBloc?id=${bloc.id}&x=${ x }&y=${ y }">&nbsp;</a>
 								</div>
 							</c:if>
 	
 							<c:if test="${ bloc == null }">
 								<div class="bloc" style="background: ${ color };">
-									<a href="ajoutBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
+									<a href="/tetrimino/tetrimino/addBloc?id=${item.id}&x=${ x }&y=${ y }">&nbsp;</a>
 								</div>
 							</c:if>
 						</c:forEach>
@@ -84,31 +44,21 @@
 				</div>
 				
 				<div class="icon remove">
-					<a href="supprimerFigure?id=${ item.id }">
+					<a href="/tetrimino/tetrimino/deleteFigure?id=${ item.id }">
 						<i class="material-icons">clear</i>
 					</a>
 				</div>
 				
 				<div class="icon moins">
-					<a href="ordonnerFigure?id=${ item.id }&sens=0">
+					<a href="/tetrimino/tetrimino/ordonner?id=${ item.id }&sens=0">
 						<i class="material-icons">arrow_upward</i>
 					</a>
 				</div>
 				
 				<div class="icon plus">
-					<a href="ordonnerFigure?id=${ item.id }&sens=1">
+					<a href="/tetrimino/tetrimino/ordonner?id=${ item.id }&sens=1">
 						<i class="material-icons">arrow_downward</i>
 					</a>
 				</div>
 			</div>
 		</c:forEach>
-
-	</div>
-
-	<script type="text/javascript"
-		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="/tetrimino/js/materialize.min.js"></script>
-	<script type="text/javascript" src="/tetrimino/js/tetrimino.js"></script>
-
-</body>
-</html>

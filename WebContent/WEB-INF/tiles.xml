@@ -46,5 +46,11 @@
 		<put-attribute name="title" value="Ajout tetri" />
 		<put-attribute name="body" value="/WEB-INF/views/jsp/ajouterTetrimino.jsp" />
 	</definition>
+	
+					<!-- Configuration de la vue "editTetrimino" -->
+	<definition name="editTetrimino" extends="base.definition">
+		<put-attribute name="title" value="Mod tetri" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/modifierTetrimino.jsp" />
+	</definition>
 
 </tiles-definitions>

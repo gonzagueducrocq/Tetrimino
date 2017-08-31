@@ -37,7 +37,7 @@
 					</c:if>
 					 <c:out value="${item.id}" /> | <c:out value="${item.nom}" /> | <c:out value="${item.couleur}" /> 
 					<a href="/tetrimino/tetrimino/delete?id=${ item.id }" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i> </a>
-					<a href="admin/modifPiece?id=${ item.id }" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
+					<a href="/tetrimino/tetrimino/edit?id=${ item.id }" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
 					
 				</li>
 			</c:forEach>

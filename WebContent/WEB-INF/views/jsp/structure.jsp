@@ -10,8 +10,10 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<link href="/tetrimino/css/materialize.min.css" type="text/css" rel="stylesheet"
-	media="screen,projection" />
+<link href="/tetrimino/css/materialize.min.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
+<link href="/tetrimino/css/tetrimino.css" type="text/css"
+	rel="stylesheet" media="screen,projection" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -24,11 +26,11 @@
 	<div class="container">
 		<tiles:insertAttribute name="body" />
 	</div>
-	
-		<script type="text/javascript"
+
+	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/tetrimino/sjs/materialize.min.js"></script>
-	
+
 </body>
 
 </html>
