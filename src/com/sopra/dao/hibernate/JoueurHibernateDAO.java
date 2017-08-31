@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.sopra.dao.IJoueurDAO;
 import com.sopra.model.Joueur;
+import com.sopra.model.Personne;
 
 
 @Repository
@@ -47,6 +48,20 @@ public class JoueurHibernateDAO implements IJoueurDAO {
 	public void delete(Joueur joueur) {
 		em.remove(em.merge(joueur));
 
+	}
+
+	@Override
+	public Joueur login(String username, String password) {
+		try {
+			return em.createQuery("FROM Joueur j WHERE j.username = :username AND j.password = :password", Joueur.class)
+					.setParameter("username", username)
+					.setParameter("password", password)
+					.getSingleResult();
+		}
+		
+		catch (NoResultException e) {
+			return null;
+		}
 	}
 
 }

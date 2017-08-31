@@ -13,7 +13,7 @@ public class JoueurServerDAO implements IJoueurDAO{
 	public static final String ATT_LIST_JOUEURS	= "joueurs";
 	public static final String ATT_JOUEUR	   	= "joueur";
 	
-
+	
 	public List<Joueur> findAll(HttpServletRequest req) {
 		List<Joueur> joueurs = new ArrayList<Joueur>();
 		
@@ -91,6 +91,12 @@ public class JoueurServerDAO implements IJoueurDAO{
 	public void delete(Joueur obj) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public Joueur login(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
