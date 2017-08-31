@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="partie")
 public class Partie implements Serializable {
@@ -41,6 +43,7 @@ public class Partie implements Serializable {
 	private Joueur joueur2;
 	
 	@OneToMany(mappedBy="partie")
+	@JsonIgnore
 	private List<Score> scores;
 
 	

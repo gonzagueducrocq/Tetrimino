@@ -9,6 +9,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="joueur")
 @PrimaryKeyJoinColumn(name="jou_id", referencedColumnName="per_id")
@@ -20,12 +22,15 @@ public class Joueur extends Personne {
 	private boolean banni;
 	
 	@OneToMany(mappedBy="joueur1")
+	@JsonIgnore
 	private List<Partie> partiesJ1;
 	
 	@OneToMany(mappedBy="joueur2")
+	@JsonIgnore
 	private List<Partie> partiesJ2;
 	
 	@OneToMany(mappedBy="joueur")
+	@JsonIgnore
 	private List<Score> scores;
 	
 	

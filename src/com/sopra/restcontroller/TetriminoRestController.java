@@ -18,17 +18,17 @@ import com.sopra.model.Tetrimino;
 @RequestMapping("/tetrimino")
 public class TetriminoRestController {
 
-@Autowired
-private ITetriminoDAO sqlTetriminoDAO;
-	
+	@Autowired
+	private ITetriminoDAO sqlTetriminoDAO;
 
-@RequestMapping(value="", method = RequestMethod.GET)
-@ResponseBody
-public ResponseEntity<List<Tetrimino>> getAll() {
-	
-	List<Tetrimino> listeTetrimino = this.sqlTetriminoDAO.findAll();
-	return new ResponseEntity<List<Tetrimino>> ( listeTetrimino , HttpStatus.OK);
-}
+
+	@RequestMapping(value="", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Tetrimino>> getAll() {
+
+		List<Tetrimino> listeTetrimino = this.sqlTetriminoDAO.findAll();
+		return new ResponseEntity<List<Tetrimino>> ( listeTetrimino , HttpStatus.OK);
+	}
 
 
 }
