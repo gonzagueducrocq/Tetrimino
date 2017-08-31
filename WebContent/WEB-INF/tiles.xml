@@ -23,4 +23,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/jsp/logIn.jsp" />
 	</definition>
 
+	<!-- Configuration de la vue "parties" -->
+	<definition name="parties" extends="base.definition">
+		<put-attribute name="title" value="Liste des parties" />
+		<put-attribute name="body" value="/WEB-INF/views/jsp/listerParties.jsp" />
+	</definition>
+
 </tiles-definitions>
