@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="bloc")
 public class Bloc
@@ -26,6 +28,7 @@ public class Bloc
 	
 	@ManyToOne
 	@JoinColumn(name="BLO_FIGURE_ID")
+	@JsonIgnore
 	private Figure figure;
 	
 	

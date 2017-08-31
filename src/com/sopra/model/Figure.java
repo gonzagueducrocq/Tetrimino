@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table (name="figure")
 public class Figure {
@@ -28,6 +30,7 @@ public class Figure {
 
 	@ManyToOne
 	@JoinColumn(name="FIG_TETRIMINO_ID")
+	@JsonIgnore
 	private Tetrimino tetrimino;
 
 	@OneToMany(mappedBy="figure")

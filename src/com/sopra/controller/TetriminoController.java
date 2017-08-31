@@ -202,7 +202,6 @@ public class TetriminoController {
 		
 		blocDAO.delete(myBloc);
 		
-		
 		return "redirect:/tetrimino/edit?id=" + myFigure.getTetrimino().getId();
 	}
 	
