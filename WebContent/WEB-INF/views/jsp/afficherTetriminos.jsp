@@ -38,8 +38,8 @@
 					</c:if>
 					<div> 
 					 <c:out value="${item.nom}"/> 
-					<a href="/tetrimino/tetrimino/delete?id=${ item.id }" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i> </a>
-					<a href="/tetrimino/tetrimino/edit?id=${ item.id }" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
+					<a href="/tetrimino/tetrimino/delete?id=${ item.id }" class="secondary-content posRelative" title="<spring:message code="afficherTetrimino.supprimer"/>"><i class="material-icons">cancel</i> </a>
+					<a href="/tetrimino/tetrimino/edit?id=${ item.id }" class="secondary-content posRelative" title="<spring:message code="afficherTetrimino.editer"/>"><i class="material-icons">edit</i></a>
 					</div>
 				</li>
 			</c:forEach>
