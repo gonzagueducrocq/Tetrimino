@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <style>
 .posRelative {
@@ -11,8 +12,8 @@
 			
 						<c:set var="etatJoueur">
 				<c:choose>
-					<c:when test="${item.banni}">Joueur banni</c:when>
-					<c:otherwise>Joueur actif</c:otherwise>
+					<c:when test="${item.banni}"><spring:message code="afficherJoueur.joueurBanni"/></c:when>
+					<c:otherwise><spring:message code="afficherJoueur.joueurActif"/></c:otherwise>
 				</c:choose>
 			</c:set>
 			

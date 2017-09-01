@@ -1,5 +1,6 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <style>
 .posRelative {
@@ -12,8 +13,8 @@
 				
 				<c:if test="${item.figures.size() > 0 }">
 					<c:set var="figure" value="${item.figures.get(0)}"></c:set>
-					<div class="figure">
-						<div class="blocs">
+					<div class="mini-figure">
+						<div class="mini-blocs">
 							<c:forEach begin="0" end="3" var="x">
 								<c:forEach begin="0" end="3" var="y">
 									<c:set var="color" value="white" />
@@ -21,12 +22,12 @@
 
 									<c:if test="${ bloc != null }">
 										<c:set var="color" value="${ item.couleur }" />
-										<div class="bloc" style="background: ${ color };">
+										<div class="mini-bloc" style="background: ${ color };">
 										</div>
 									</c:if>
 
 									<c:if test="${ bloc == null }">
-										<div class="bloc" style="background: ${ color };">
+										<div class="mini-bloc" style="background: ${ color };">
 										</div>
 									</c:if>
 								</c:forEach>
@@ -35,15 +36,15 @@
 
 					</div>
 					</c:if>
-					 <c:out value="${item.id}" /> | <c:out value="${item.nom}" /> | <c:out value="${item.couleur}" /> 
+					<div> 
+					 <c:out value="${item.nom}"/> 
 					<a href="/tetrimino/tetrimino/delete?id=${ item.id }" class="secondary-content posRelative" title="Supprimer"><i class="material-icons">cancel</i> </a>
 					<a href="/tetrimino/tetrimino/edit?id=${ item.id }" class="secondary-content posRelative" title="Editer"><i class="material-icons">edit</i></a>
-					
+					</div>
 				</li>
 			</c:forEach>
 		</div>
 		<p>
 			<a class="waves-effect waves-light btn-large red lighten-1"
-				href="/tetrimino/tetriminos"><i class="material-icons left">add</i>Ajouter
-				Tetrimino</a>
+				href="/tetrimino/tetriminos"><i class="material-icons left">add</i><spring:message code="afficherTetrimino.ajouter"/></a>
 		</p>

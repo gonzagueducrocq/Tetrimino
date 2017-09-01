@@ -94,7 +94,7 @@ public class TetriminoController {
 			BindingResult result) {
 
 		tetriminoDAO.save(tetrimino);
-		return "redirect:/tetriminos";
+		return "redirect:/tetrimino/edit?id=" + tetrimino.getId();
 
 	}
 

@@ -1,9 +1,10 @@
-div.figure {
+div.mini-figure {
 	width: 40px;
 	height: 40px;
+	float: left;
 }
 
-div.blocs {
+div.mini-blocs {
 	float: left;
 	width: 40px;
 	height: 40px;
@@ -11,7 +12,7 @@ div.blocs {
 }
 
 
-div.bloc {
+div.mini-bloc {
 	position: relative;
 	float: left;
 	
@@ -20,3 +21,6 @@ div.bloc {
 	background: white;
 }
 
+li {
+	list-style:none;
+}

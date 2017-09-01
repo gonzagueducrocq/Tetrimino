@@ -7,20 +7,20 @@
 
 
 <tr>
-<td><form:label path="username">Nom utilisateur</form:label></td>
+<td><form:label path="username"><spring:message code="login.nomutilisateur"/></form:label></td>
 <td><form:input path="username" /></td>
 <td><form:errors path="username" /></td>
 
 </tr>
 
 <tr>
-<td><form:label path="password">Mot de passe</form:label></td>
+<td><form:label path="password"><spring:message code="login.motdepasse"/></form:label></td>
 <td><form:input path="password" /></td>
 <td><form:errors path="password" /></td>
 </tr>
 
 <tr>
-<td colspan="2"><input type="submit" value="Se connecter"/></td>
+<td colspan="2"><input type="submit" value="<spring:message code="login.connexion"/>"/></td>
 </tr>
 </table>
 </form:form>

@@ -1,23 +1,25 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
 		<form:form method="POST" class="row center" modelAttribute="tetri">
 			<input type="text" name="id" class="row center" value="${ tetri.id }"
 				hidden />
-			<h5>Nom Tetrimino</h5>
+			<h5><spring:message code="modifierTetrimino.nom"/></h5>
 			<form:input path="nom" class="row center"/>
-			<h5>Couleur</h5>
-			<form:input path="couleur" class="row center"/>
+			<h5><spring:message code="modifierTetrimino.couleur"/></h5>
+			<input name="couleur" class="row center" type="color" value="${tetri.couleur}"/>
 			<br>
 			<button class="btn waves-effect waves-light red lighten-1"
 				type="submit" name="action">
-				Modifier <i class="material-icons right" >send</i>
+				<spring:message code="modifierTetrimino.modifier"/><i class="material-icons right" >send</i>
 			</button>
 
 		</form:form>
 
 		<a class="waves-effect waves-light btn red lighten-1"
-			href="/tetrimino/tetrimino/addFigure?id=${tetri.id}">Nouvelle figure</a>
+			href="/tetrimino/tetrimino/addFigure?id=${tetri.id}"><spring:message code="modifierTetrimino.nouvelleFigure"/></a>
 
 		<c:forEach items="${tetri.figures}" var="item">
 			<div class="figure">
