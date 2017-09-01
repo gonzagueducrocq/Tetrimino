@@ -17,6 +17,7 @@ import com.sopra.dao.IJoueurDAO;
 import com.sopra.dao.IPartieDAO;
 import com.sopra.model.Joueur;
 import com.sopra.model.Partie;
+import com.sopra.model.Tetrimino;
 
 @RestController
 @RequestMapping("partie")
@@ -59,6 +60,23 @@ public class PartieRestController {
 		return new ResponseEntity<Partie> (myPartie, HttpStatus.OK);
 
 		
+	}
+	
+	
+	@RequestMapping(value="/solo", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Partie>> getSolo() {
+
+		List<Partie> listePartie = this.sqlPartieDAO.getSolo();
+		return new ResponseEntity<List<Partie>> ( listePartie , HttpStatus.OK);
+	}
+	
+	@RequestMapping(value="/vs", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<List<Partie>> getVs() {
+
+		List<Partie> listePartie = this.sqlPartieDAO.getVs();
+		return new ResponseEntity<List<Partie>> ( listePartie , HttpStatus.OK);
 	}
 	
 }

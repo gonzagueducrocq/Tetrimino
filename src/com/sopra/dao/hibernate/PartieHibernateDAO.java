@@ -60,4 +60,26 @@ public class PartieHibernateDAO implements IPartieDAO {
 		em.remove(em.merge(partie));
 	}
 
+	@Override
+	public List<Partie> getSolo() {
+
+		try {
+			return (List<Partie>) em.createQuery("FROM Partie p WHERE p.joueur2 = null").getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+		
+	}
+
+	@Override
+	public List<Partie> getVs() {
+		try {
+			return (List<Partie>) em.createQuery("FROM Partie p WHERE p.joueur2 != null").getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+		
+	}
+	
+	
 }

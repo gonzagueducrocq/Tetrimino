@@ -7,4 +7,7 @@ import com.sopra.model.Partie;
 public interface IPartieDAO extends IDAO<Partie> {
 	public List<Partie> findAllDesc();
 	public List<Partie> findAllWithScores();
+	public List<Partie> getSolo();
+	public List<Partie> getVs();
+	
 }
