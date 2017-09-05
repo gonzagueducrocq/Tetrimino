@@ -4,11 +4,17 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/template.xhtml">
-	<ui:define name="titre">FAQ List</ui:define>
+	
+	<ui:define name="titre" >FAQ List
+	
+	<a href="/tetrimino/ajoutFAQ.xhtml" class="secondary-content posRelative" title="ajouter une question"><i class="material-icons">add</i> </a>
+
+	</ui:define>
 	<ui:define name="style">
 		<style>
-</style>
+		</style>
 	</ui:define>
+	
 	<ui:define name="contenu">
 
 		<h:panelGroup id="question">
@@ -18,6 +24,8 @@
 			<li>
 			<div class="collapsible-header">
 				<i class="material-icons">help</i>#{question.id}) #{ question.question }
+							
+				<a style="float:right;" href="/tetrimino/editFAQ.xhtml?id=${ question.id }" class="secondary-content posRelative" title="modifier une question"><i class="material-icons">edit</i></a>
 			</div>
 			<div class="collapsible-body">
 				<span>#{question.reponse}</span>
@@ -28,6 +36,7 @@
 		</h:panelGroup>
 
 	</ui:define>
+	
 	<ui:define name="script">
 		<script type="text/javascript"></script>
 	</ui:define>
