@@ -13,6 +13,8 @@
 
 		<br />
 		<h:form>
+			<h:inputHidden value="#{faqController.id}" />
+			
 			<h:outputLabel>Question: </h:outputLabel>
 			<h:inputText id="question" value="#{faqController.question}" class="validate"
 				required="true"
@@ -25,11 +27,9 @@
 				requiredMessage="Veuillez saisir une reponse">
 			</h:inputText>
 			<br />
-		
-
 
 			<h:commandButton value="Soumettre"
-				action="#{faqController.submit(param.id)}"></h:commandButton>
+				action="#{faqController.submit}"></h:commandButton>
 
 		</h:form>
 
