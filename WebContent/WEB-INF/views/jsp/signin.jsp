@@ -51,7 +51,7 @@
 				<label for="password"><spring:message code="signin.motdepasse"/></label>
 			</div>
 			
-			<button class="btn waves-effect waves-light" type="submit">
+			<button class="btn waves-effect waves-light lighten-red" type="submit">
 			<spring:message code="signin.ok"/><i class="material-icons right">send</i>
 			</button>
 		</form>

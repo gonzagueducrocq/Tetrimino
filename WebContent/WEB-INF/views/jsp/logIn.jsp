@@ -20,7 +20,7 @@
 </tr>
 
 <tr>
-<td colspan="2"><input type="submit" value="<spring:message code="login.connexion"/>"/></td>
+<td colspan="1"><input class="btn waves-effect waves-light red lighten-1" type="submit" value="<spring:message code="login.connexion"/>"/></td>
 </tr>
 </table>
 </form:form>

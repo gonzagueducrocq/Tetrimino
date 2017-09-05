@@ -46,5 +46,5 @@
 		</div>
 		<p>
 			<a class="waves-effect waves-light btn-large red lighten-1"
-				href="/tetrimino/tetriminos"><i class="material-icons left">add</i><spring:message code="afficherTetrimino.ajouter"/></a>
+				href="/tetrimino/tetrimino/add"><i class="material-icons left">add</i><spring:message code="afficherTetrimino.ajouter"/></a>
 		</p>
