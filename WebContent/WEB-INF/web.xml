@@ -8,7 +8,10 @@
 	<!-- Chargement du contexte Spring (application-context.xml) -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/application-context.xml</param-value>
+		<param-value>
+			/WEB-INF/application-context.xml
+			/WEB-INF/jsf-context.xml
+		</param-value>
 	</context-param>
 
 	<!-- Chargement du context Spring Web : création de ApplicationContext -->
