@@ -16,35 +16,26 @@ public class FaqController {
 	@Autowired
 	private IFAQDAO FAQDAO;
 	
-	
 	public String getQuestion() {
 		return question;
 	}
-
-
-
 
 	public void setQuestion(String question) {
 		this.question = question;
 	}
 
-
-
-
 	public String getReponse() {
 		return reponse;
 	}
-
-
-
 
 	public void setReponse(String reponse) {
 		this.reponse = reponse;
 	}
 
-
-
-
+	public String rechercher() {
+		
+	}
+	
 	public String submit() {
 		
 		FAQ faq = new FAQ();

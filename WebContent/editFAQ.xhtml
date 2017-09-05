@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/template.xhtml">
-	<ui:define name="titre">FAQ</ui:define>
+	<ui:define name="titre">Edit FAQ</ui:define>
 	<ui:define name="style">
 		<style>
 </style>
@@ -14,20 +14,20 @@
 		<br />
 		<h:form>
 			<h:outputLabel>Question: </h:outputLabel>
-			<h:inputText id="question" value="#{faqController.question}" class="validate"
+			<h:inputText id="question" value="#{FAQController.getQuestion()}" class="validate"
 				required="true"
 				requiredMessage="Veuillez saisir une question">
 			</h:inputText>
 			<br />
 			<h:outputLabel>Reponse: </h:outputLabel>
-			<h:inputText value="#{faqController.reponse}" class="validate"
+			<h:inputText value="#{FAQController.getReponse()}" class="validate"
 				required="true"
 				requiredMessage="Veuillez saisir une reponse">
 			</h:inputText>
 			<br />
 
 			<h:commandButton value="Soumettre"
-				action="#{faqController.submit}"></h:commandButton>
+				action="#{FAQController.submit}"></h:commandButton>
 
 		</h:form>
 

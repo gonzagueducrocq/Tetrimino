@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	template="/WEB-INF/template.xhtml">
-	<ui:define name="titre">FAQ</ui:define>
+	<ui:define name="titre">FAQ List</ui:define>
 	<ui:define name="style">
 		<style>
 </style>
@@ -14,26 +14,26 @@
 		<br />
 		<h:form>
 			<h:outputLabel>FAQ </h:outputLabel>
-			<h:inputText id="produit" value="#{listeProduitsController.produit}"
+			<h:inputText id="question" value="#{FAQController.question}"
 				class="validate" required="true"
-				requiredMessage="Veuillez saisir un libelle de produit">
-				<f:ajax event="blur" render="listeProduits" listener="#{listeProduitsController.rechercher}" />
+				requiredMessage="Veuillez saisir une ou partie de question">
+				<f:ajax event="blur" render="question" listener="#{FAQController.question}" />
 				
 			</h:inputText>
-			<h:message id="message_required_product" for="produit"
+			<h:message id="message_required_product" for="question"
 				errorClass="erreur" />
 			<br />
 
 			<br>
 			<h:commandButton value="Rechercher"
-				action="#{listeProduitsController.rechercher}"></h:commandButton>
+				action="#{FAQController.rechercher}"></h:commandButton>
 			</br>
 		</h:form>
 	<br></br>
-	<h:panelGroup id="listeProduits">
-		<ui:repeat value="#{listeProduitsController.listeProduits}"
-			var="produit">
-	#{ produit.nom } <br> </br>
+	<h:panelGroup id="question">
+		<ui:repeat value="#{FAQController.question}"
+			var="question">
+	#{ question.id } <br> </br>
 		</ui:repeat>
 		</h:panelGroup>
 
