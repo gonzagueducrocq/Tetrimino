@@ -1,5 +1,7 @@
 package com.sopra.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -32,8 +34,19 @@ public class FaqController {
 		this.reponse = reponse;
 	}
 
-	public String rechercher() {
+	public String submit (int id) {
 		
+		FAQ faq = new FAQ();
+		
+		faq.setQuestion(getQuestion());
+		
+		faq.setReponse(getReponse());
+		
+		faq.setId(id);
+		
+		FAQDAO.save(faq);
+		
+		return "listeFAQ";
 	}
 	
 	public String submit() {
@@ -49,6 +62,9 @@ public class FaqController {
 		return "listeFAQ";
 	}
 	
-	
+	public List<FAQ> getListe() {
+		
+		return FAQDAO.findAll();
+	}
 	
 }

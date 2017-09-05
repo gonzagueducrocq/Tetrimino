@@ -11,30 +11,20 @@
 	</ui:define>
 	<ui:define name="contenu">
 
-		<br />
-		<h:form>
-			<h:outputLabel>FAQ </h:outputLabel>
-			<h:inputText id="question" value="#{FAQController.question}"
-				class="validate" required="true"
-				requiredMessage="Veuillez saisir une ou partie de question">
-				<f:ajax event="blur" render="question" listener="#{FAQController.question}" />
-				
-			</h:inputText>
-			<h:message id="message_required_product" for="question"
-				errorClass="erreur" />
-			<br />
+		<h:panelGroup id="question">
 
-			<br>
-			<h:commandButton value="Rechercher"
-				action="#{FAQController.rechercher}"></h:commandButton>
-			</br>
-		</h:form>
-	<br></br>
-	<h:panelGroup id="question">
-		<ui:repeat value="#{FAQController.question}"
-			var="question">
-	#{ question.id } <br> </br>
-		</ui:repeat>
+			<ul class="collapsible" data-collapsible="accordion">
+				<ui:repeat value="#{faqController.liste}" var="question">
+			<li>
+			<div class="collapsible-header">
+				<i class="material-icons">help</i>#{question.id}) #{ question.question }
+			</div>
+			<div class="collapsible-body">
+				<span>#{question.reponse}</span>
+			</div>
+		</li>
+				</ui:repeat>
+				</ul>
 		</h:panelGroup>
 
 	</ui:define>

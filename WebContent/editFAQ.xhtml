@@ -14,20 +14,22 @@
 		<br />
 		<h:form>
 			<h:outputLabel>Question: </h:outputLabel>
-			<h:inputText id="question" value="#{FAQController.getQuestion()}" class="validate"
+			<h:inputText id="question" value="#{faqController.question}" class="validate"
 				required="true"
 				requiredMessage="Veuillez saisir une question">
 			</h:inputText>
 			<br />
 			<h:outputLabel>Reponse: </h:outputLabel>
-			<h:inputText value="#{FAQController.getReponse()}" class="validate"
+			<h:inputText value="#{faqController.reponse}" class="validate"
 				required="true"
 				requiredMessage="Veuillez saisir une reponse">
 			</h:inputText>
 			<br />
+		
+
 
 			<h:commandButton value="Soumettre"
-				action="#{FAQController.submit}"></h:commandButton>
+				action="#{faqController.submit(param.id)}"></h:commandButton>
 
 		</h:form>
 
