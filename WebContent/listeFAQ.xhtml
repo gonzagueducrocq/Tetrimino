@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/WEB-INF/template.xhtml">
+	<ui:define name="titre">FAQ</ui:define>
+	<ui:define name="style">
+		<style>
+</style>
+	</ui:define>
+	<ui:define name="contenu">
+
+		<br />
+		<h:form>
+			<h:outputLabel>FAQ </h:outputLabel>
+			<h:inputText id="produit" value="#{listeProduitsController.produit}"
+				class="validate" required="true"
+				requiredMessage="Veuillez saisir un libelle de produit">
+				<f:ajax event="blur" render="listeProduits" listener="#{listeProduitsController.rechercher}" />
+				
+			</h:inputText>
+			<h:message id="message_required_product" for="produit"
+				errorClass="erreur" />
+			<br />
+
+			<br>
+			<h:commandButton value="Rechercher"
+				action="#{listeProduitsController.rechercher}"></h:commandButton>
+			</br>
+		</h:form>
+	<br></br>
+	<h:panelGroup id="listeProduits">
+		<ui:repeat value="#{listeProduitsController.listeProduits}"
+			var="produit">
+	#{ produit.nom } <br> </br>
+		</ui:repeat>
+		</h:panelGroup>
+
+	</ui:define>
+	<ui:define name="script">
+		<script type="text/javascript"></script>
+	</ui:define>
+</ui:composition>
